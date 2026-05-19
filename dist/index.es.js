@@ -13,7 +13,6 @@ function _() {
   for (var s, r, l = 0, a = "", n = arguments.length; l < n; l++) (s = arguments[l]) && (r = u(s)) && (a && (a += " "), a += r);
   return a;
 }
-const B = "/VL_Logo.png";
 function h({
   src: s,
   alt: r = "Brand logo",
@@ -21,7 +20,11 @@ function h({
   className: a
 }) {
   const n = _("vb-logo", `vb-logo--${l}`, a);
-  return /* @__PURE__ */ e("img", { className: n, src: s ?? B, alt: r });
+  if (!s) {
+    return /* @__PURE__ */ e("span", { className: n, "aria-hidden": "true", children: /* @__PURE__ */ c("svg", { viewBox: "0 0 32 32", width: l === "sm" ? 24 : l === "lg" ? 72 : 40, height: l === "sm" ? 24 : l === "lg" ? 72 : 40, fill: "currentColor", role: "img", className: "vb-logo__fallback", children: [/* @__PURE__ */ e("path", { d: "M16 4L28 10V22L16 28L4 22V10L16 4Z", opacity: "0.25" }), /* @__PURE__ */ e("path", { d: "M16 8L24 12.5V21.5L16 26L8 21.5V12.5L16 8Z", opacity: "0.5" }), /* @__PURE__ */ e("circle", { cx: "16", cy: "16", r: "4.5" })] }) });
+  }
+
+  return /* @__PURE__ */ e("img", { className: n, src: s, alt: r });
 }
 function P({
   logoSrc: s,
