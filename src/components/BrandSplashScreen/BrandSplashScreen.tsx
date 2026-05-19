@@ -1,6 +1,4 @@
 import clsx from "clsx";
-import { BrandLoader } from "../BrandLoader";
-import { BrandLogo } from "../BrandLogo";
 import { PoweredByBrand } from "../PoweredByBrand";
 
 export interface BrandSplashScreenProps {
@@ -9,6 +7,10 @@ export interface BrandSplashScreenProps {
   appName?: string;
   subtitle?: string;
   poweredBy?: string;
+  version?: string;
+  tags?: string[];
+  statusLabel?: string;
+  loadingLabel?: string;
   fullScreen?: boolean;
   className?: string;
 }
@@ -19,23 +21,101 @@ export function BrandSplashScreen({
   appName,
   subtitle,
   poweredBy,
+  version,
+  tags = [],
+  statusLabel = "Preparazione ambiente...",
+  loadingLabel = "Caricamento portale in corso",
   fullScreen = true,
-  className
+  className,
 }: BrandSplashScreenProps) {
   return (
     <section
       className={clsx("vb-splash", fullScreen && "vb-splash--fullscreen", className)}
       aria-live="polite"
+      aria-label={loadingLabel}
     >
+      {/* Decorative background layers */}
+      <div className="vb-splash__noise" aria-hidden="true" />
+      <div className="vb-splash__grid" aria-hidden="true" />
+      <div className="vb-splash__orb vb-splash__orb--tl" aria-hidden="true" />
+      <div className="vb-splash__orb vb-splash__orb--br" aria-hidden="true" />
+
+      {/* Corner registration marks */}
+      <div className="vb-splash__corner vb-splash__corner--tl" aria-hidden="true" />
+      <div className="vb-splash__corner vb-splash__corner--bl" aria-hidden="true" />
+
+      {/* Main content */}
       <div className="vb-splash__content">
-        <BrandLogo src={logoSrc} alt={logoAlt} size="lg" className="vb-splash__logo" />
-        {appName ? <h1 className="vb-splash__title">{appName}</h1> : null}
-        {subtitle ? <p className="vb-splash__subtitle">{subtitle}</p> : null}
-        <BrandLoader label="Loading" size="md" className="vb-splash__loader" />
+
+        {/* Logo with pulse rings */}
+        <div className="vb-splash__logo-wrap" aria-hidden={!logoSrc}>
+          <div className="vb-splash__ring vb-splash__ring--outer" />
+          <div className="vb-splash__ring vb-splash__ring--inner" />
+
+          {logoSrc ? (
+            <img
+              src={logoSrc}
+              alt={logoAlt}
+              className="vb-splash__logo-img"
+            />
+          ) : (
+            <div className="vb-splash__logo-fallback">
+              <DefaultLogoIcon />
+            </div>
+          )}
+        </div>
+
+        {/* App name */}
+        {appName && (
+          <h1 className="vb-splash__title">{appName}</h1>
+        )}
+
+        {/* Subtitle */}
+        {subtitle && (
+          <p className="vb-splash__subtitle">{subtitle}</p>
+        )}
+
+        {/* Informazioni applicazione */}
+        {(version || tags.length > 0) && (
+          <div className="vb-splash__pills" aria-label="Informazioni applicazione">
+            {version && (
+              <span className="vb-splash__pill vb-splash__pill--accent">{version}</span>
+            )}
+            {tags.map((tag) => (
+              <span key={tag} className="vb-splash__pill">{tag}</span>
+            ))}
+          </div>
+        )}
+
+        {/* Stato caricamento */}
+        <div className="vb-splash__loader" role="status" aria-label={statusLabel}>
+          <div className="vb-splash__progress-bar" aria-hidden="true">
+            <div className="vb-splash__progress-fill" />
+          </div>
+          <span className="vb-splash__status-label">{statusLabel}</span>
+        </div>
+
       </div>
-      {poweredBy ? (
-        <PoweredByBrand brandName={poweredBy} logoSrc={logoSrc} className="vb-splash__powered" />
-      ) : null}
+
+      {/* Firma brand */}
+      {poweredBy && (
+        <PoweredByBrand
+          brandName={poweredBy}
+          logoSrc={logoSrc}
+          className="vb-splash__powered"
+        />
+      )}
     </section>
+  );
+}
+
+/** Icona geometrica mostrata quando non viene passato un logo */
+function DefaultLogoIcon() {
+  return (
+    <svg viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M16 4L28 10V22L16 28L4 22V10L16 4Z" opacity="0.3" />
+      <path d="M16 8L24 12.5V21.5L16 26L8 21.5V12.5L16 8Z" opacity="0.6" />
+      <circle cx="16" cy="16" r="4.5" />
+    </svg>
   );
 }

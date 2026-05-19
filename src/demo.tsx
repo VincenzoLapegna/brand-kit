@@ -96,7 +96,7 @@ function Showcase() {
               <BrandSplashScreen
                 logoSrc={logoSrc}
                 logoAlt="VL logo"
-                appName="Vike App"
+                appName="Vincenzo Lapegna"
                 subtitle="Esperienza React brandizzata, pulita e riusabile."
                 poweredBy="Vike"
                 fullScreen={false}

@@ -51,13 +51,14 @@ export declare interface BrandSplashScreenProps {
     className?: string;
 }
 
-export declare function PoweredByBrand({ brandName, logoSrc, href, className }: PoweredByBrandProps): JSX_2.Element;
+export declare function PoweredByBrand({ brandName, logoSrc, href, className, variant, }: PoweredByBrandProps): JSX_2.Element;
 
 export declare interface PoweredByBrandProps {
     brandName?: string;
     logoSrc?: string;
     href?: string;
     className?: string;
+    variant?: "pill" | "inline" | "badge";
 }
 
 export { }
