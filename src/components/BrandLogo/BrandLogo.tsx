@@ -1,7 +1,5 @@
 import clsx from "clsx";
 
-const DEFAULT_LOGO_SRC = undefined;
-
 export interface BrandLogoProps {
   src?: string;
   alt?: string;
@@ -15,11 +13,10 @@ export function BrandLogo({
   size = "md",
   className
 }: BrandLogoProps) {
-  const classes = clsx("vb-logo", `vb-logo--${size}`, className);
+  const classes = clsx("vb-logo", `vb-logo--${size}`, !src && "vb-logo--default", className);
 
   if (!src) {
-    // Use package-local public asset as default logo
-    return <img className={classes} src="./VL_Logo.png" alt={alt} />;
+    return <span className={classes} role="img" aria-label={alt} />;
   }
 
   return <img className={classes} src={src} alt={alt} />;

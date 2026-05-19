@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import clsx from "clsx";
+import { BrandLogo } from "../BrandLogo";
 import { PoweredByBrand } from "../PoweredByBrand";
 
 export interface BrandSplashScreenProps {
@@ -77,21 +78,16 @@ export function BrandSplashScreen({
       <div className="vb-splash__content">
 
         {/* Logo with pulse rings */}
-        <div className="vb-splash__logo-wrap" aria-hidden={!logoSrc}>
+        <div className="vb-splash__logo-wrap">
           <div className="vb-splash__ring vb-splash__ring--outer" />
           <div className="vb-splash__ring vb-splash__ring--inner" />
 
-          {logoSrc ? (
-            <img
-              src={logoSrc}
-              alt={logoAlt}
-              className="vb-splash__logo-img"
-            />
-          ) : (
-            <div className="vb-splash__logo-fallback">
-              <DefaultLogoIcon />
-            </div>
-          )}
+          <BrandLogo
+            src={logoSrc}
+            alt={logoAlt}
+            size="lg"
+            className="vb-splash__logo-img"
+          />
         </div>
 
         {/* App name */}
@@ -135,16 +131,5 @@ export function BrandSplashScreen({
         />
       )}
     </section>
-  );
-}
-
-/** Icona geometrica mostrata quando non viene passato un logo */
-function DefaultLogoIcon() {
-  return (
-    <svg viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M16 4L28 10V22L16 28L4 22V10L16 4Z" opacity="0.3" />
-      <path d="M16 8L24 12.5V21.5L16 26L8 21.5V12.5L16 8Z" opacity="0.6" />
-      <circle cx="16" cy="16" r="4.5" />
-    </svg>
   );
 }

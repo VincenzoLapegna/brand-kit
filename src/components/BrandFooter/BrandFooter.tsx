@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { BrandLogo } from "../BrandLogo";
 
 export interface FooterLink {
   label: string;
@@ -73,17 +74,12 @@ export function BrandFooter({
             href={href ?? "#"}
             aria-label={`${brandName} homepage`}
           >
-            {logoSrc ? (
-              <img
-                src={logoSrc}
-                alt={`${brandName} logo`}
-                className="vb-footer-full__logo-img"
-              />
-            ) : (
-              <span className="vb-footer-full__logo-circle" aria-hidden="true">
-                <DefaultLogoIcon />
-              </span>
-            )}
+            <BrandLogo
+              src={logoSrc}
+              alt={`${brandName} logo`}
+              size="md"
+              className="vb-footer-full__logo-img"
+            />
             <span className="vb-footer-full__wordmark">{brandName}</span>
           </a>
 
@@ -179,24 +175,18 @@ export function BrandFooter({
             className="vb-footer-full__powered"
             aria-label={`Powered by ${poweredBy}`}
           >
-            <span className="vb-footer-full__powered-slab" aria-hidden="true">
-              <DefaultLogoIcon small />
+            <span className="vb-footer-full__powered-slab">
+              <BrandLogo
+                src={logoSrc}
+                alt={`${poweredBy} logo`}
+                size="sm"
+                className="vb-footer-full__powered-logo"
+              />
             </span>
             Powered by <strong>{poweredBy}</strong>
           </a>
         )}
       </div>
     </footer>
-  );
-}
-
-function DefaultLogoIcon({ small }: { small?: boolean }) {
-  const s = small ? 10 : 16;
-  return (
-    <svg viewBox="0 0 32 32" width={s} height={s} fill="white" aria-hidden="true">
-      <path d="M16 4L28 10V22L16 28L4 22V10L16 4Z" opacity="0.3" />
-      <path d="M16 8L24 12.5V21.5L16 26L8 21.5V12.5L16 8Z" opacity="0.6" />
-      <circle cx="16" cy="16" r="4.5" />
-    </svg>
   );
 }

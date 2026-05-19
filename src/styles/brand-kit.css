@@ -30,6 +30,15 @@
   vertical-align: middle;
 }
 
+.vb-logo--default {
+  background:
+    var(--vb-brand-surface-strong)
+    url("./VL_Logo.png")
+    center / contain
+    no-repeat;
+  border-radius: 8px;
+}
+
 .vb-logo--sm {
   width: 24px;
   height: 24px;
@@ -233,6 +242,11 @@
   gap: 0.2rem;
 }
 
+.vb-banner__logo {
+  width: 70px;
+  height: 36px;
+}
+
 .vb-banner__title {
   overflow-wrap: anywhere;
   font-size: 1rem;
@@ -321,7 +335,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0;
-  padding: 5px 12px 5px 5px;
+  padding: 6px 16px 6px 7px;
   background: var(--vb-brand-surface);
   border: 1px solid var(--vb-brand-border);
   border-radius: 99px;
@@ -359,28 +373,41 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 26px;
-  height: 26px;
+  width: 78px;
+  height: 40px;
   border-radius: 99px;
-  background: var(--vb-brand-accent);
-  margin-right: 8px;
+  overflow: hidden;
+  background: var(--vb-brand-surface-strong);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  margin-right: 12px;
   flex-shrink: 0;
-  transition: background 0.18s ease;
+  box-shadow:
+    0 2px 8px rgba(15, 23, 42, 0.12),
+    inset 0 0 0 2px rgba(193, 67, 64, 0.08);
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
 }
 
 .vb-powered--link:hover .vb-powered__slab {
-  background: var(--vb-brand-accent-dark);
+  border-color: rgba(193, 67, 64, 0.28);
+  box-shadow:
+    0 3px 12px rgba(15, 23, 42, 0.16),
+    inset 0 0 0 2px rgba(193, 67, 64, 0.12);
 }
 
 .vb-powered__logo {
-  width: 14px;
-  height: 14px;
+  width: 70px;
+  height: 32px;
+  border-radius: 8px;
+  object-fit: contain;
+  object-position: center;
 }
 
 /* ── Testi ───────────────────────────────────────────────────── */
 
 .vb-powered__label {
-  font-size: 0.62rem;
+  font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -401,7 +428,7 @@
 
 .vb-powered__name {
   font-family: var(--vb-brand-font-display);
-  font-size: 0.82rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--vb-brand-fg);
@@ -431,15 +458,16 @@
 }
 
 .vb-powered--badge .vb-powered__slab {
-  width: 32px;
-  height: 32px;
-  border-radius: 10px;
+  width: 82px;
+  height: 44px;
+  border-radius: 12px;
   margin-right: 0;
 }
 
 .vb-powered--badge .vb-powered__logo {
-  width: 17px;
-  height: 17px;
+  width: 74px;
+  height: 34px;
+  border-radius: 8px;
 }
 
 .vb-powered--badge .vb-powered__text-group {
@@ -476,14 +504,14 @@
 }
 
 .vb-powered--inline .vb-powered__slab {
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 24px;
   margin-right: 0;
 }
 
 .vb-powered--inline .vb-powered__logo {
-  width: 11px;
-  height: 11px;
+  width: 36px;
+  height: 18px;
 }
 
 .vb-powered--inline .vb-powered__sep {
@@ -660,10 +688,10 @@
 
 /* Logo image variant */
 .vb-splash__logo-img {
-  width: 72px;
+  width: 118px;
   height: 72px;
   object-fit: contain;
-  border-radius: 50%;
+  border-radius: 12px;
   position: relative;
   z-index: 1;
 }
@@ -933,10 +961,11 @@
 }
 
 .vb-footer-full__logo-img {
-  width: 36px;
+  width: 72px;
   height: 36px;
-  border-radius: 50%;
+  border-radius: 8px;
   object-fit: contain;
+  object-position: center;
   flex-shrink: 0;
 }
 
@@ -1185,14 +1214,24 @@
 }
 
 .vb-footer-full__powered-slab {
-  width: 18px;
-  height: 18px;
-  border-radius: 5px;
-  background: var(--vb-brand-accent);
+  width: 42px;
+  height: 22px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--vb-brand-surface-strong);
+  border: 1px solid rgba(15, 23, 42, 0.1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+}
+
+.vb-footer-full__powered-logo {
+  width: 38px;
+  height: 18px;
+  border-radius: 4px;
+  object-fit: contain;
+  object-position: center;
 }
 
 /* ── Responsive ──────────────────────────────────────────────── */
