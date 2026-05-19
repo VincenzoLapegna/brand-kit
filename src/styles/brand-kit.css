@@ -15,8 +15,12 @@
   --vb-brand-border: rgba(148, 163, 184, 0.32);
   --vb-brand-border-light: rgba(255, 255, 255, 0.7);
   --vb-brand-shadow: 0 28px 58px -42px rgba(15, 23, 42, 0.75);
-  --vb-brand-font-body: "Manrope", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --vb-brand-font-display: "Space Grotesk", "Manrope", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --vb-brand-font-body:
+    "Manrope", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  --vb-brand-font-display:
+    "Space Grotesk", "Manrope", "Segoe UI", system-ui, -apple-system,
+    BlinkMacSystemFont, sans-serif;
 }
 
 .vb-logo {
@@ -109,8 +113,16 @@
   padding: 2rem;
   background: var(--vb-brand-bg);
   background-image:
-    radial-gradient(circle at 12% 14%, rgba(193, 67, 64, 0.18), transparent 34%),
-    radial-gradient(circle at 88% 12%, var(--vb-brand-teal-soft), transparent 28%),
+    radial-gradient(
+      circle at 12% 14%,
+      rgba(193, 67, 64, 0.18),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 88% 12%,
+      var(--vb-brand-teal-soft),
+      transparent 28%
+    ),
     linear-gradient(180deg, #f8f9fc 0%, var(--vb-brand-bg-soft) 100%);
   color: var(--vb-brand-fg);
 }
@@ -473,8 +485,6 @@
   }
 }
 
-
-
 /* ── BrandSplashScreen — nuovi layer visivi ──────────────────── */
 
 /* Noise texture overlay */
@@ -497,7 +507,11 @@
     linear-gradient(rgba(148, 163, 184, 0.18) 1px, transparent 1px),
     linear-gradient(90deg, rgba(148, 163, 184, 0.18) 1px, transparent 1px);
   background-size: 48px 48px;
-  mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 80%);
+  mask-image: radial-gradient(
+    ellipse 70% 70% at 50% 50%,
+    black 20%,
+    transparent 80%
+  );
 }
 
 /* Ambient glow orbs */
@@ -520,7 +534,11 @@
   right: -60px;
   width: 280px;
   height: 280px;
-  background: radial-gradient(circle, rgba(15, 118, 110, 0.13), transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(15, 118, 110, 0.13),
+    transparent 70%
+  );
 }
 
 /* Corner registration marks */
@@ -544,15 +562,35 @@
   top: 1.25rem;
   left: 1.5rem;
 }
-.vb-splash__corner--tl::before { top: 0; left: 0; width: 100%; height: 1px; }
-.vb-splash__corner--tl::after  { top: 0; left: 0; width: 1px; height: 100%; }
+.vb-splash__corner--tl::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+}
+.vb-splash__corner--tl::after {
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+}
 
 .vb-splash__corner--bl {
   bottom: 1.25rem;
   left: 1.5rem;
 }
-.vb-splash__corner--bl::before { bottom: 0; left: 0; width: 100%; height: 1px; }
-.vb-splash__corner--bl::after  { bottom: 0; left: 0; width: 1px; height: 100%; }
+.vb-splash__corner--bl::before {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+}
+.vb-splash__corner--bl::after {
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+}
 
 /* ── Logo wrapper with pulse rings ──────────────────────────── */
 
@@ -572,7 +610,9 @@
   animation: vb-ring-pulse 2.8s ease-in-out infinite;
 }
 
-.vb-splash__ring--inner { inset: -14px; }
+.vb-splash__ring--inner {
+  inset: -14px;
+}
 .vb-splash__ring--outer {
   inset: -26px;
   border-color: rgba(193, 67, 64, 0.08);
@@ -580,8 +620,15 @@
 }
 
 @keyframes vb-ring-pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.4; transform: scale(1.04); }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.04);
+  }
 }
 
 /* Logo image variant */
@@ -696,9 +743,17 @@
 }
 
 @keyframes vb-progress-slide {
-  0%   { transform: translateX(-100%); width: 40%; }
-  60%  { width: 60%; }
-  100% { transform: translateX(280%); width: 40%; }
+  0% {
+    transform: translateX(-100%);
+    width: 40%;
+  }
+  60% {
+    width: 60%;
+  }
+  100% {
+    transform: translateX(280%);
+    width: 40%;
+  }
 }
 
 .vb-splash__status-label {
@@ -713,8 +768,14 @@
 /* ── Shared entrance animation ───────────────────────────────── */
 
 @keyframes vb-fadeUp {
-  from { opacity: 0; transform: translateY(18px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Override: content now uses vb-fadeUp directly */
@@ -758,13 +819,394 @@
 /* ── Mobile ──────────────────────────────────────────────────── */
 
 @media (max-width: 520px) {
-  .vb-splash__orb--tl { width: 220px; height: 220px; }
-  .vb-splash__orb--br { width: 180px; height: 180px; }
+  .vb-splash__orb--tl {
+    width: 220px;
+    height: 220px;
+  }
+  .vb-splash__orb--br {
+    width: 180px;
+    height: 180px;
+  }
 
   .vb-splash__powered {
     right: auto;
     bottom: 1rem;
     left: 50%;
     transform: translateX(-50%);
+  }
+}
+
+/* ── BrandFooter full ────────────────────────────────────────── */
+
+.vb-footer-full {
+  position: relative;
+  background: var(--vb-brand-bg);
+  color: var(--vb-brand-fg);
+  font-family: var(--vb-brand-font-body);
+  overflow: hidden;
+}
+
+/* Accent top rule — accent → teal gradient */
+.vb-footer-full__top-rule {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--vb-brand-accent) 30%,
+    var(--vb-brand-teal) 70%,
+    transparent
+  );
+  opacity: 0.35;
+}
+
+/* Ambient orbs */
+.vb-footer-full__orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.vb-footer-full__orb--tl {
+  bottom: -60px;
+  left: -60px;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(193, 67, 64, 0.1), transparent 70%);
+}
+.vb-footer-full__orb--br {
+  bottom: -40px;
+  right: -40px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(
+    circle,
+    rgba(15, 118, 110, 0.09),
+    transparent 70%
+  );
+}
+
+/* ── Main grid body ──────────────────────────────────────────── */
+
+.vb-footer-full__body {
+  position: relative;
+  padding: 3rem 3rem 2rem;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+  z-index: 1;
+}
+
+/* ── Brand column ────────────────────────────────────────────── */
+
+.vb-footer-full__logo-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+  text-decoration: none;
+}
+
+.vb-footer-full__logo-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.vb-footer-full__logo-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--vb-brand-accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.vb-footer-full__wordmark {
+  font-family: var(--vb-brand-font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--vb-brand-fg);
+}
+
+.vb-footer-full__tagline {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--vb-brand-muted);
+  margin: 0 0 1.25rem;
+  max-width: 220px;
+}
+
+/* ── Social icons ────────────────────────────────────────────── */
+
+.vb-footer-full__socials {
+  display: flex;
+  gap: 8px;
+}
+
+.vb-footer-full__social {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--vb-brand-border);
+  background: var(--vb-brand-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--vb-brand-muted);
+  text-decoration: none;
+  font-size: 15px;
+  transition:
+    border-color 0.18s,
+    color 0.18s,
+    background 0.18s;
+}
+
+.vb-footer-full__social:hover {
+  border-color: rgba(193, 67, 64, 0.4);
+  color: var(--vb-brand-accent);
+  background: rgba(193, 67, 64, 0.08);
+}
+
+/* ── Column headings ─────────────────────────────────────────── */
+
+.vb-footer-full__col-title {
+  font-family: var(--vb-brand-font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--vb-brand-fg);
+  margin: 0 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vb-footer-full__col-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--vb-brand-border);
+}
+
+/* ── Nav links ───────────────────────────────────────────────── */
+
+.vb-footer-full__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.vb-footer-full__links a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--vb-brand-muted);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.15s;
+}
+
+.vb-footer-full__links a:hover {
+  color: var(--vb-brand-accent);
+}
+
+.vb-footer-full__link-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--vb-brand-accent);
+  opacity: 0;
+  flex-shrink: 0;
+  transition: opacity 0.15s;
+}
+
+.vb-footer-full__links a:hover .vb-footer-full__link-dot {
+  opacity: 1;
+}
+
+/* Badge "Nuovo" ecc. */
+.vb-footer-full__badge {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--vb-brand-teal-soft);
+  color: var(--vb-brand-teal);
+  margin-left: 2px;
+}
+
+/* ── Status card ─────────────────────────────────────────────── */
+
+.vb-footer-full__status-card {
+  padding: 0.75rem 1rem;
+  background: var(--vb-brand-surface);
+  border: 1px solid var(--vb-brand-border);
+  border-radius: 10px;
+}
+
+.vb-footer-full__status-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--vb-brand-fg);
+  margin-bottom: 0.35rem;
+}
+
+.vb-footer-full__status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.vb-footer-full__status-card--ok .vb-footer-full__status-dot {
+  background: #22c55e;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+}
+
+.vb-footer-full__status-card--error .vb-footer-full__status-dot {
+  background: var(--vb-brand-accent);
+  box-shadow: 0 0 0 2px var(--vb-brand-accent-soft);
+}
+
+.vb-footer-full__status-sub {
+  font-size: 0.75rem;
+  color: var(--vb-brand-muted);
+  margin: 0;
+}
+
+/* ── Bottom bar ──────────────────────────────────────────────── */
+
+.vb-footer-full__bottom {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--vb-brand-border);
+  padding: 1.125rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.vb-footer-full__copy {
+  font-size: 0.8125rem;
+  color: var(--vb-brand-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.vb-footer-full__copy-sep {
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--vb-brand-border);
+}
+
+.vb-footer-full__legal {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.vb-footer-full__legal a {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--vb-brand-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.vb-footer-full__legal a:hover {
+  color: var(--vb-brand-fg);
+}
+
+/* Powered-by inline */
+.vb-footer-full__powered {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--vb-brand-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.vb-footer-full__powered:hover {
+  color: var(--vb-brand-accent);
+}
+
+.vb-footer-full__powered strong {
+  color: var(--vb-brand-fg);
+  font-weight: 700;
+}
+
+.vb-footer-full__powered-slab {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  background: var(--vb-brand-accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .vb-footer-full__body {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2.5rem 2rem 1.5rem;
+  }
+
+  .vb-footer-full__brand {
+    grid-column: 1 / -1;
+  }
+
+  .vb-footer-full__tagline {
+    max-width: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .vb-footer-full__body {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.25rem 1.25rem;
+  }
+
+  .vb-footer-full__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.25rem;
+    gap: 0.75rem;
+  }
+}
+
+/* ── Reduced motion ──────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .vb-footer-full__social,
+  .vb-footer-full__links a,
+  .vb-footer-full__link-dot,
+  .vb-footer-full__powered {
+    transition: none;
   }
 }
