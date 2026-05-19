@@ -45,6 +45,33 @@
   height: 72px;
 }
 
+/* Fallback slab for BrandLogo when no src provided */
+.vb-logo__fallback-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.vb-logo__fallback-slab {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: var(--vb-brand-accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.vb-logo--sm .vb-logo__fallback-slab {
+  width: 24px;
+  height: 24px;
+}
+.vb-logo--lg .vb-logo__fallback-slab {
+  width: 72px;
+  height: 72px;
+}
+.vb-logo__fallback {
+  display: block;
+}
+
 .vb-loader {
   display: inline-flex;
   align-items: center;

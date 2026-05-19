@@ -59,7 +59,7 @@ function Showcase() {
               <BrandFooter
                 brandName="Vike"
                 logoSrc={logoSrc}
-                text="Design system personale per prodotti React"
+                tagline="Design system personale per prodotti React"
                 href="https://github.com/vike"
               />
             </div>

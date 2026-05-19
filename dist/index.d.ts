@@ -12,13 +12,21 @@ export declare interface BrandBannerProps {
     className?: string;
 }
 
-export declare function BrandFooter({ brandName, logoSrc, text, href, className }: BrandFooterProps): JSX_2.Element;
+export declare function BrandFooter({ brandName, logoSrc, tagline, href, columns, socials, poweredBy, poweredByHref, legalLinks, statusLabel, statusOk, statusUpdatedAt, className, }: BrandFooterProps): JSX_2.Element;
 
 export declare interface BrandFooterProps {
     brandName?: string;
     logoSrc?: string;
-    text?: string;
+    tagline?: string;
     href?: string;
+    columns?: FooterColumn[];
+    socials?: FooterSocial[];
+    poweredBy?: string;
+    poweredByHref?: string;
+    legalLinks?: FooterLink[];
+    statusLabel?: string;
+    statusOk?: boolean;
+    statusUpdatedAt?: string;
     className?: string;
 }
 
@@ -55,6 +63,23 @@ export declare interface BrandSplashScreenProps {
     className?: string;
     minDurationMs?: number;
     onMinDurationEnd?: () => void;
+}
+
+declare interface FooterColumn {
+    title: string;
+    links: FooterLink[];
+}
+
+declare interface FooterLink {
+    label: string;
+    href: string;
+    badge?: string;
+}
+
+declare interface FooterSocial {
+    label: string;
+    href: string;
+    icon: React.ReactNode;
 }
 
 export declare function PoweredByBrand({ brandName, logoSrc, href, className, variant, }: PoweredByBrandProps): JSX_2.Element;
