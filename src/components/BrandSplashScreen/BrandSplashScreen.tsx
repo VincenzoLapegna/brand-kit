@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { PoweredByBrand } from "../PoweredByBrand";
 
@@ -13,6 +14,8 @@ export interface BrandSplashScreenProps {
   loadingLabel?: string;
   fullScreen?: boolean;
   className?: string;
+  minDurationMs?: number;
+  onMinDurationEnd?: () => void;
 }
 
 export function BrandSplashScreen({
@@ -27,10 +30,36 @@ export function BrandSplashScreen({
   loadingLabel = "Caricamento portale in corso",
   fullScreen = true,
   className,
+  minDurationMs = 1800,
+  onMinDurationEnd,
 }: BrandSplashScreenProps) {
+  const [minDurationElapsed, setMinDurationElapsed] = useState(minDurationMs <= 0);
+
+  useEffect(() => {
+    if (minDurationMs <= 0) {
+      setMinDurationElapsed(true);
+      onMinDurationEnd?.();
+      return;
+    }
+
+    setMinDurationElapsed(false);
+
+    const timeoutId = window.setTimeout(() => {
+      setMinDurationElapsed(true);
+      onMinDurationEnd?.();
+    }, minDurationMs);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [minDurationMs, onMinDurationEnd]);
+
   return (
     <section
-      className={clsx("vb-splash", fullScreen && "vb-splash--fullscreen", className)}
+      className={clsx(
+        "vb-splash",
+        fullScreen && "vb-splash--fullscreen",
+        minDurationElapsed && "vb-splash--min-duration-elapsed",
+        className
+      )}
       aria-live="polite"
       aria-label={loadingLabel}
     >

@@ -39,7 +39,7 @@ export declare interface BrandLogoProps {
     className?: string;
 }
 
-export declare function BrandSplashScreen({ logoSrc, logoAlt, appName, subtitle, poweredBy, version, tags, statusLabel, loadingLabel, fullScreen, className, }: BrandSplashScreenProps): JSX_2.Element;
+export declare function BrandSplashScreen({ logoSrc, logoAlt, appName, subtitle, poweredBy, version, tags, statusLabel, loadingLabel, fullScreen, className, minDurationMs, onMinDurationEnd, }: BrandSplashScreenProps): JSX_2.Element;
 
 export declare interface BrandSplashScreenProps {
     logoSrc?: string;
@@ -53,6 +53,8 @@ export declare interface BrandSplashScreenProps {
     loadingLabel?: string;
     fullScreen?: boolean;
     className?: string;
+    minDurationMs?: number;
+    onMinDurationEnd?: () => void;
 }
 
 export declare function PoweredByBrand({ brandName, logoSrc, href, className, variant, }: PoweredByBrandProps): JSX_2.Element;
