@@ -1,5 +1,19 @@
 import { JSX as JSX_2 } from 'react/jsx-runtime';
 
+export declare function BrandAdFooter({ brandName, title, text, ctaLabel, href, logoSrc, logoAlt, variant, className, }: BrandAdFooterProps): JSX_2.Element;
+
+export declare interface BrandAdFooterProps {
+    brandName?: string;
+    title?: string;
+    text?: string;
+    ctaLabel?: string;
+    href?: string;
+    logoSrc?: string;
+    logoAlt?: string;
+    variant?: "bar" | "card" | "minimal";
+    className?: string;
+}
+
 export declare function BrandBanner({ logoSrc, logoAlt, title, subtitle, href, variant, className }: BrandBannerProps): JSX_2.Element;
 
 export declare interface BrandBannerProps {

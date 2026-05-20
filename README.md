@@ -62,6 +62,24 @@ export function HeaderBanner() {
 }
 ```
 
+### BrandAdFooter
+
+```tsx
+import { BrandAdFooter } from "@vike/brand-kit";
+
+export function ClientFooterAd() {
+  return (
+    <BrandAdFooter
+      variant="bar"
+      title="Hai bisogno di consulenza o visibilità online?"
+      text="Landing page, siti web e applicazioni React pensate per portare nuovi contatti al tuo business."
+      ctaLabel="Visita il portfolio"
+      href="https://vlapegna.it"
+    />
+  );
+}
+```
+
 ## Personalizzazione
 
 Puoi personalizzare l'aspetto sovrascrivendo le CSS variables nel tuo progetto:

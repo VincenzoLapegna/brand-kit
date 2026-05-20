@@ -1,5 +1,7 @@
 import "./styles/brand-kit.css";
 
+export { BrandAdFooter } from "./components/BrandAdFooter";
+export type { BrandAdFooterProps } from "./components/BrandAdFooter";
 export { BrandBanner } from "./components/BrandBanner";
 export type { BrandBannerProps } from "./components/BrandBanner";
 export { BrandFooter } from "./components/BrandFooter";

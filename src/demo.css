@@ -125,6 +125,11 @@ body {
   place-items: center;
 }
 
+.vb-showcase__ad-footer-stack {
+  display: grid;
+  gap: 14px;
+}
+
 @media (max-width: 760px) {
   .vb-showcase__inner {
     width: min(100% - 24px, 1120px);

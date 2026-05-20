@@ -1,6 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import {
+  BrandAdFooter,
   BrandBanner,
   BrandFooter,
   BrandLoader,
@@ -86,6 +87,55 @@ function Showcase() {
                 subtitle="Versione glass coerente con il Portfolio"
                 href="https://github.com/vike/brand-kit"
                 variant="minimal"
+              />
+            </div>
+          </article>
+
+          <article className="vb-showcase__card vb-showcase__card--wide">
+            <p className="vb-showcase__label">BrandAdFooter</p>
+            <div className="vb-showcase__ad-footer-stack">
+              <BrandAdFooter
+                logoSrc={logoSrc}
+                variant="bar"
+                title="Hai bisogno di consulenza o visibilità online?"
+                text="Landing page, siti web e applicazioni React pensate per portare nuovi contatti al tuo business."
+                ctaLabel="Visita il portfolio"
+                href="https://vlapegna.it"
+              />
+              <BrandAdFooter
+                logoSrc={logoSrc}
+                variant="card"
+                title="Sviluppo software su misura"
+                text="Interfacce React, gestionali e strumenti digitali progettati intorno al tuo flusso di lavoro."
+                ctaLabel="Parliamone"
+                href="mailto:vyberserk@libero.it"
+              />
+              <BrandAdFooter
+                logoSrc={logoSrc}
+                variant="minimal"
+                className="vb-ad-footer--thin"
+                title="Full-Stack Developer per progetti web moderni"
+                text="Una firma discreta da inserire sotto al footer del cliente."
+                ctaLabel="Scopri di più"
+                href="/"
+              />
+              <BrandAdFooter
+                logoSrc={logoSrc}
+                variant="bar"
+                className="vb-ad-footer--thin"
+                title="Realizzazione siti web e landing page"
+                text="Firma pubblicitaria sottile per il fondo pagina."
+                ctaLabel="vlapegna.it"
+                href="https://vlapegna.it"
+              />
+              <BrandAdFooter
+                logoSrc={logoSrc}
+                variant="card"
+                className="vb-ad-footer--thin"
+                title="Consulenza React e software su misura"
+                text="Formato compatto con bordo leggero."
+                ctaLabel="Contatti"
+                href="mailto:vyberserk@libero.it"
               />
             </div>
           </article>
